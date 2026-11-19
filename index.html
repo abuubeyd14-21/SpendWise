@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise | Personal Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Spend<span>Wise</span></div>
+        <p>Take control of your money.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h1>Welcome to SpendWise!</h1>
+            <p>Track your expenses and manage your budget wisely.</p>
+        </section>
+
+        <!-- Budget Settings -->
+        <section class="budget-section">
+            <h2>Monthly Budget</h2>
+            <div class="budget-controls">
+                <input type="number" id="budgetInput"
+                       placeholder="Enter your budget" min="0" step="0.01">
+                <button id="budgetBtn">Set Budget</button>
+            </div>
+        </section>
+
+        <!-- Dashboard Summary -->
+        <section class="summary-grid">
+
+            <div class="summary-card">
+                <h3>Total Budget</h3>
+                <p id="totalBudget">$0.00</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Total Expenses</h3>
+                <p id="totalExpenses">$0.00</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Remaining Balance</h3>
+                <p id="remainingBalance">$0.00</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Spending Percentage</h3>
+                <p id="spendingPercentage">0%</p>
+            </div>
+
+        </section>
+
+        <!-- Budget Progress -->
+        <section class="progress-section">
+            <div class="progress-heading">
+                <h2>Budget Progress</h2>
+                <span id="progressLabel">0%</span>
+            </div>
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+            <p id="budgetMessage">Set your budget to get started.</p>
+        </section>
+
+        <!-- Add Expense Form -->
+        <section class="form-section">
+            <h2>Add New Expense</h2>
+
+            <form id="expenseForm">
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description"
+                           placeholder="e.g. Groceries" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount ($)</label>
+                    <input type="number" id="amount"
+                           placeholder="e.g. 50" min="0.01"
+                           step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select category</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="add-btn">
+                    + Add Expense
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Expense History -->
+        <section class="expenses-section">
+            <div class="section-heading">
+                <h2>Your Expenses</h2>
+                <button id="clearBtn" class="clear-btn">Clear All</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="expenseList">
+                        <!-- JavaScript displays expenses here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage">No expenses yet. Add your first expense!</p>
+        </section>
+
+        <!-- Spending Insights -->
+        <section class="insights-section">
+            <h2>Spending Insights</h2>
+            <div id="categoryInsights">
+                Your spending insights will appear here.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SpendWise. Manage your money wisely.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
